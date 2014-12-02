@@ -1,6 +1,6 @@
 ! function(){
 
-	var woc = new WordsOfClock(document.getElementById('svg'));
+	var woc = new WordsOfTime(document.getElementById('svg'));
 
 }();
 

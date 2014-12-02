@@ -59,7 +59,7 @@
 		};
 	}
 
-	function WordsOfClock(el,options){
+	function WordsOfTime(el,options){
 
 		this.el = el;
 
@@ -98,7 +98,7 @@
 		this.init();
 	}
 
-	WordsOfClock.prototype.defaults = {
+	WordsOfTime.prototype.defaults = {
 		/*background : '#0093d0',
 		activeColor : '#ffe01e',
 		unactiveColor : '#199dd4',*/
@@ -108,7 +108,7 @@
 		fontFamily : '"Open Sans", Sans-serif'
 	};
 
-	WordsOfClock.prototype.setSize = function(){
+	WordsOfTime.prototype.setSize = function(){
 
 		var self = this,
 			svgHeight,
@@ -141,7 +141,7 @@
 
 	};
 
-	WordsOfClock.prototype.setUpLetters = function(){
+	WordsOfTime.prototype.setUpLetters = function(){
 		var self = this;
 
 		self.letters[0] = ['i','t','l','i','s','b','f','a','m','p','m'];
@@ -157,7 +157,7 @@
 
 	};
 
-	WordsOfClock.prototype.setUpWords = function(){
+	WordsOfTime.prototype.setUpWords = function(){
 		var self = this;
 
 		self.words.itis = [
@@ -327,7 +327,7 @@
 
 	};
 
-	WordsOfClock.prototype.setUpGrid = function(){
+	WordsOfTime.prototype.setUpGrid = function(){
 
 		var self = this;
 		
@@ -358,7 +358,7 @@
 
 	};
 
-	WordsOfClock.prototype.setUpTime = function(){
+	WordsOfTime.prototype.setUpTime = function(){
 
 		var self = this,
 			date, 
@@ -403,7 +403,7 @@
 
 	};
 
-	WordsOfClock.prototype.switchOn = function(stringArr){
+	WordsOfTime.prototype.switchOn = function(stringArr){
 
 		var self = this;
 
@@ -416,7 +416,7 @@
 
 	};
 
-	WordsOfClock.prototype.switchOffAll = function(){
+	WordsOfTime.prototype.switchOffAll = function(){
 		var self = this;
 
 		self.snapSVG.selectAll('text').attr({
@@ -425,7 +425,7 @@
 		
 	};
 
-	WordsOfClock.prototype.init = function(){
+	WordsOfTime.prototype.init = function(){
 		var self = this;
 
 		self.timeout = setInterval(function(){
@@ -434,6 +434,6 @@
 		
 	};
 
-	window.WordsOfClock = WordsOfClock;
+	window.WordsOfTime = WordsOfTime;
 
 }(window, Snap);
