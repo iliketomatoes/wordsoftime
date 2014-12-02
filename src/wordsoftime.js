@@ -27,7 +27,7 @@
 		
 		var prep,stdMin,roundedMin;
 
-		if(minutes > 30){
+		if(minutes >= 35){
 
 			prep = 'to';
 			minutes = 60 - minutes;
