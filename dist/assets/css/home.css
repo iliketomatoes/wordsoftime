@@ -69,6 +69,10 @@ html, body{
     padding: 0;
 }
 
+html,body{
+    overflow: hidden;
+}
+
 
 #svg-ctr{
     position: relative;
@@ -81,6 +85,9 @@ html, body{
     position: relative;
 }
 
+#svg-effects{
+    visibility: hidden;
+}
 
 
 

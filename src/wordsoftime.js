@@ -1,4 +1,4 @@
-! function(window, Snap){
+!(function(window, Snap){
 
 	'use-strict';
 
@@ -102,10 +102,14 @@
 		/*background : '#0093d0',
 		activeColor : '#ffe01e',
 		unactiveColor : '#199dd4',*/
-		background : '#000000',
+		background : '#344851',
 		activeColor : '#ffffff',
-		unactiveColor : '#1a1918',
-		fontFamily : '"Open Sans", Sans-serif'
+		unactiveColor : '#ffffff',
+		fontFamily : '"Open Sans", Sans-serif',
+		switchOnDuration : 1000,
+		switchOffDuration : 500,
+		switchOnDelta : 500,
+		checkInterval : 10000
 	};
 
 	WordsOfTime.prototype.setSize = function(){
@@ -409,9 +413,15 @@
 
 		for(var i = 0; i < stringArr.length; i++){
 
-			self.snapSVG.select('text[data-row="' + stringArr[i][0] + '"][data-column="' + stringArr[i][1] + '"]').attr({
-			    fill: self.options.activeColor
-			});
+			//var progressiveIgnition = setTimeout(function(){
+				self.snapSVG.select('text[data-row="' + stringArr[i][0] + '"][data-column="' + stringArr[i][1] + '"]').animate({
+				    fill: self.options.activeColor,
+				    opacity : '1'
+				}, self.options.switchOnDuration);
+			//}, self.options.switchOnDelta);
+				self.snapSVG.select('text[data-row="' + stringArr[i][0] + '"][data-column="' + stringArr[i][1] + '"]').attr({
+				    filter: ''
+				}, self.options.switchOnDuration);
 		}
 
 	};
@@ -419,9 +429,14 @@
 	WordsOfTime.prototype.switchOffAll = function(){
 		var self = this;
 
+		self.snapSVG.selectAll('text').animate({
+		    fill: self.options.unactiveColor,
+		    opacity : '0.2'
+		}, self.options.switchOffDuration);
+
 		self.snapSVG.selectAll('text').attr({
-		    fill: self.options.unactiveColor
-		});
+		    filter: Snap('#blur-effect-2')
+		}, self.options.switchOffDuration);
 		
 	};
 
@@ -430,10 +445,10 @@
 
 		self.timeout = setInterval(function(){
 			self.setUpTime();
-		},30000);
+		},self.options.checkInterval);
 		
 	};
 
 	window.WordsOfTime = WordsOfTime;
 
-}(window, Snap);
+})(window, Snap);
