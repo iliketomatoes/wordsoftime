@@ -102,10 +102,11 @@
 		/*background : '#0093d0',
 		activeColor : '#ffe01e',
 		unactiveColor : '#199dd4',*/
-		background : '#344851',
+		background : '#E87E04',
 		activeColor : '#ffffff',
 		unactiveColor : '#ffffff',
-		fontFamily : '"Open Sans", Sans-serif',
+		fontFamily : 'Raleway, Sans-serif',
+		fontWeight : '400',
 		switchOnDuration : 1000,
 		switchOffDuration : 500,
 		switchOnDelta : 500,
@@ -353,7 +354,8 @@
 					fill : self.options.unactiveColor,
 					'font-size': Math.round(self.styling.lineHeight * 2 / 3) + 'px',
 					'text-anchor': 'middle',
-					'font-family' : self.options.fontFamily
+					'font-family' : self.options.fontFamily,
+					'font-weight' : self.options.fontWeight
 				});
 
 				self.boxes[i].push(box);

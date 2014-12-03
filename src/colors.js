@@ -12,7 +12,9 @@
 
 		blue : '#0093d0',
 
-		darkBlue : '#344851'
+		darkBlue : '#344851',
+
+		pink : '#DB0A5B'
 
 	};
 
